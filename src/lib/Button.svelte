@@ -4,7 +4,9 @@
   export let name: string = "";
 
   async function handleButtonClick() {
-    const response = await invoke("greet", { name });
+    const res = await invoke("ping");
+    console.log(res);
+    
   }
 </script>
 

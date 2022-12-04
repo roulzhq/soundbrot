@@ -3,15 +3,32 @@
     windows_subsystem = "windows"
 )]
 
-// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+use serde::{Deserialize, Serialize};
+use serde_json::Result;
+
+#[derive(Serialize, Deserialize)]
+pub struct SoundReq {
+    name: String,
+    data: String,
+    size: u32,
+    kind: String,
+}
+
 #[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
+fn ping() -> String {
+    return "pong".to_string();
+}
+
+#[tauri::command]
+fn upload(data: &str) -> String {
+    let req: SoundReq = serde_json::from_str(data).expect("");
+    println!("{}", req.name);
+    return req.kind;
 }
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![ping, upload])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

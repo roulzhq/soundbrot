@@ -1,4 +1,5 @@
 <script>
+  import AddButton from "$lib/AddButton.svelte";
   import Button from "$lib/Button.svelte";
 </script>
 
@@ -10,6 +11,7 @@
   <Button name="penis" />
   <Button name="penis" />
   <Button name="jonas" />
+  <AddButton />
 </div>
 
 <style>
