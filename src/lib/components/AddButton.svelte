@@ -24,7 +24,6 @@
       };
 
       const res = await invoke("upload", { data: JSON.stringify(request) });
-      console.log(res);
     }
   }
 </script>

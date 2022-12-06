@@ -1,4 +1,6 @@
-<header>deine mudda</header>
+<header>
+  <a href="/app">deine mudda</a>
+</header>
 
 <style>
   header {

@@ -1,24 +1,23 @@
-<script>
-  import AddButton from "$lib/AddButton.svelte";
-  import Button from "$lib/Button.svelte";
+<script lang="ts">
+  import type { LayoutData } from "./$types";
+
+  import { goto } from "$app/navigation";
+  import { onMount } from "svelte";
+
+  export let data: LayoutData;
+
+  onMount(() => {
+    if (!data.session) {
+      goto("/auth");
+    } else {
+      goto("/app");
+    }
+  });
 </script>
 
-<div class="buttons">
-  <Button name="1" />
-  <Button name="penis" />
-  <Button name="penis" />
-  <Button name="penis" />
-  <Button name="penis" />
-  <Button name="penis" />
-  <Button name="jonas" />
-  <AddButton />
-</div>
+<svelte:head>
+  <title>Supabase + SvelteKit</title>
+  <meta name="description" content="SvelteKit using supabase-js v2" />
+</svelte:head>
 
-<style>
-  .buttons {
-    padding: 32px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-    gap: 16px;
-  }
-</style>
+<slot />

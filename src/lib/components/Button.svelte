@@ -5,8 +5,6 @@
 
   async function handleButtonClick() {
     const res = await invoke("ping");
-    console.log(res);
-    
   }
 </script>
 

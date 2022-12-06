@@ -9,6 +9,9 @@ const config = {
 
   kit: {
     adapter: staticAdapter(),
+    alias: {
+      "$styles/*": "src/styles/*",
+    },
   },
 };
 
