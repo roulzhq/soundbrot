@@ -1,10 +1,8 @@
-<div class="sidebar">
-    kot ist lecker
-</div>
+<div class="sidebar" />
 
 <style>
   .sidebar {
-    background-color: blueviolet;
+    background-color: #2f2f2f;
     height: 100%;
   }
 </style>

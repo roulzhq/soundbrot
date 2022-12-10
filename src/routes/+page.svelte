@@ -10,7 +10,7 @@
     if (!data.session) {
       goto("/auth");
     } else {
-      goto("/app");
+      goto("/app/buttons");
     }
   });
 </script>

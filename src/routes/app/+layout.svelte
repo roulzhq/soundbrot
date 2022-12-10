@@ -5,15 +5,20 @@
   import db from "$lib/supabase";
   import Header from "$lib/components/Header.svelte";
   import Sidebar from "$lib/components/Sidebar.svelte";
+  import user from "$lib/state/user";
 
-  import "$styles/app.css";
-
-  onMount(() => {
+  onMount(async () => {
     const {
       data: { subscription },
     } = db.auth.onAuthStateChange((event, session) => {
       invalidate("supabase:auth");
     });
+
+    const userRes = await db.auth.getUser();
+
+    if (user) {
+      user.update(() => userRes.data.user);
+    }
 
     return () => {
       subscription.unsubscribe();

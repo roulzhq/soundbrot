@@ -1,4 +1,4 @@
-import type { LayoutLoad } from "./$types";
+import type { LayoutLoad } from "../$types";
 
 import { getSupabase } from "@supabase/auth-helpers-sveltekit";
 import type { Session } from "@supabase/supabase-js";

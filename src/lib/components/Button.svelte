@@ -1,23 +1,21 @@
 <script lang="ts">
-  import { invoke } from "@tauri-apps/api/tauri";
-
-  export let name: string = "";
-
-  async function handleButtonClick() {
-    const res = await invoke("ping");
-  }
+  export let onClick: () => void;
 </script>
 
-<button class="button" on:click={handleButtonClick}> {name} </button>
+<button class="button" on:click={onClick}> <slot /> </button>
 
 <style>
   .button {
     padding: 16px;
-    background-color: aqua;
+    background-color: #17c0eb;
     border: none;
+    transition: all 100ms ease-in-out;
+    box-shadow: 0px 0px 6px -4px #17c0eb;
+    cursor: pointer;
   }
 
   .button:hover {
-    background-color: rgb(15, 240, 240);
+    background-color: #1aecec;
+    box-shadow: 0px 0px 16px -4px #17c0eb;
   }
 </style>
