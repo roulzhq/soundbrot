@@ -1,5 +1,5 @@
 {
-  "name": "soundboard",
+  "name": "soundbrot",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,7 +12,11 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "@tauri-apps/api": "^1.1.0"
+    "@fontsource/ubuntu-mono": "^4.5.11",
+    "@supabase/auth-helpers-sveltekit": "^0.8.6",
+    "@supabase/supabase-js": "^2.1.1",
+    "@tauri-apps/api": "^1.1.0",
+    "sass": "^1.56.2"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "next",
